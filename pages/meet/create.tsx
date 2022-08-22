@@ -19,7 +19,7 @@ const Register = () => {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault()
 
-        axios.post('http://api.where2meet.uk:5043/meets/', {
+        await axios.post('http://api.where2meet.uk:5043/meets/', {
             name,
             description,
             lat,
