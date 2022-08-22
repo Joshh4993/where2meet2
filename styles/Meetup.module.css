@@ -1,0 +1,161 @@
+.meetups {
+  margin: 40px auto;
+  letter-spacing: 1px;
+  line-height: 1.6em;
+}
+
+.error {
+  background: pink;
+  color: crimson;
+  border: 1px solid crimson;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 600;
+  ;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /**grid-template-rows: 0.4fr 0.6fr;**/
+  grid-column-gap: 0px;
+  grid-row-gap: 5px;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin: 20px auto;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+  display: block;
+  max-height: 50px;
+  margin-bottom: 0;
+}
+
+.card h4 {
+  display: block;
+  max-height: 50px;
+  margin-top: 2rem;
+  color: #777;
+}
+
+.card h4 {
+  display: block;
+  max-height: 50px;
+  color: #777;
+}
+
+.card p {
+  color: #777;
+}
+
+.card a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--primary);
+  cursor: pointer;
+  text-align: center;
+  font-size: large;
+  margin-top: 3rem;
+}
+
+.card a:hover {
+  text-decoration: underline;
+  font-weight: 600;
+  color: rgb(170, 166, 166);
+}
+
+.card button {
+  margin-bottom: 0;
+  padding: 10px 16px;
+  height: 4rem;
+  border: 2px solid var(--primary);
+  border-radius: 30px;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.card button:hover {
+  color: white;
+  background: var(--primary);
+}
+
+.gridTitle {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.gridLocation {
+  display: block;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.gridLocLat {
+  display: block;
+  grid-row: 1;
+  grid-column: 1;
+}
+.gridLocLong {
+  display: block;
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.gridOrganiser {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.gridButton {
+  grid-row: 1 / span 2;
+  grid-column: 2
+}
+
+.gridButtonC {
+  right: 0;
+  grid-row: 1;
+  grid-column: 2
+}
+
+.gridDate {
+  margin-bottom: 0;
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.gridDirectionsButton {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.gridTime {
+  grid-row: 1;
+  grid-column: 1;
+  display: block;
+  padding-top: 3rem;
+}
+
+.gridDetails {
+  grid-row: 2;
+  grid-column: 1;
+}
+.gridMap {
+  margin-left: -2.5vw;
+  width: 85vw;
+  grid-row: 1;
+  grid-column: 1
+}
+
+.gridDetailsLs {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.gridOrganiserG {
+  grid-row: 3;
+  grid-column: 1 / span 2;
+}
