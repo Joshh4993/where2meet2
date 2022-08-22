@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout'
 import Router, { useRouter } from 'next/router'
 import styles from '../../styles/Meetup.module.css'
 import MapContainerCreation from '../../components/MapContainerCreation'
-const axios = require("axios").default
+const axios = require("axios")
 
 const Register = () => {
     const [GPSLat, setGPSLat] = useState(null)
@@ -19,14 +19,20 @@ const Register = () => {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault()
 
-        await axios.post('http://api.where2meet.uk:5043/meets/', {
-            name,
-            description,
-            lat,
-            long
-        }).then(async function (response) {
-            await Router.push(`/meet/${response.data._id}`)
+        const response = await fetch('http://api.where2meet.uk:5043/meets/', {
+            method: 'POST',
+            body: JSON.stringify({
+                name,
+                description,
+                lat,
+                long
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         })
+        const data = await response.json()
+        await Router.push(`/meet/${data._id}`)
 
     }
 
