@@ -16,7 +16,7 @@ const Register = () => {
     const [long, setLong] = useState('')
     const [description, setDescription] = useState('')
 
-    const submit = async (e: SyntheticEvent) => {
+    async function submit(e: SyntheticEvent){
         e.preventDefault()
 
         axios.post('http://api.where2meet.uk:5043/meets/', {

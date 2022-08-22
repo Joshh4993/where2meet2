@@ -28,7 +28,7 @@ export default function Home(props) {
   )
 }
 
-export async function getInitialProps(context) {
+export async function getServerSideProps(context) {
   const { id } = context.query
   const res = await fetch(
     `http://api.where2meet.uk/meets/${id}`
