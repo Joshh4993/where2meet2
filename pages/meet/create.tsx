@@ -36,7 +36,7 @@ const Register = () => {
         }
         const response = await fetch(endpoint, options)
         const resdata = await response.json()
-        Router.push(`https://where2meet.uk/meet/${resdata._id}`)
+        Router.push(`http://where2meet.uk/meet/${resdata._id}`)
     }
 
     const handleGoogleMapClick = (obj) => {
