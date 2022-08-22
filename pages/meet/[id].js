@@ -31,7 +31,7 @@ export default function Home(props) {
 export async function getInitialProps(context) {
   const { id } = context.query
   const res = await fetch(
-    `http://api.where2meet.uk:5043/meets/${id}`
+    `http://api.where2meet.uk/meets/${id}`
   );
   const meet = await res.json();
   return {

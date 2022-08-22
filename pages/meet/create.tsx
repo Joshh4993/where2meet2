@@ -19,7 +19,7 @@ const Register = () => {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault()
 
-        const response = await fetch('http://api.where2meet.uk:5043/meets/', {
+        const response = await fetch('http://api.where2meet.uk/meets/', {
             method: 'POST',
             body: JSON.stringify({
                 name,
