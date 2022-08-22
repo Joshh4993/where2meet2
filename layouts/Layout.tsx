@@ -34,6 +34,7 @@ const Layout = (props) => {
                 <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon-16x16.png" />
                 <link rel="manifest" href="/image/site.webmanifest" />
                 <link rel="mask-icon" href="/image/safari-pinned-tab.svg" color="#5bbad5" />
+                <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
                 <meta name="msapplication-TileColor" content="#2b5797" />
                 <meta name="theme-color" content="#beb8b8" />
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous" />
