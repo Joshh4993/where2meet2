@@ -19,20 +19,14 @@ const Register = () => {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault()
 
-        const response = await fetch('http://api.where2meet.uk/meets/', {
-            method: 'POST',
-            body: JSON.stringify({
-                name,
-                description,
-                lat,
-                long
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+        axios.post('http://api.where2meet.uk:5043/meets/', {
+            name,
+            description,
+            lat,
+            long
+        }).then(async function (response) {
+            await Router.push(`/meet/${response.data._id}`)
         })
-        const data = await response.json()
-        await Router.push(`/meet/${data._id}`)
 
     }
 
