@@ -26,7 +26,7 @@ const Register = () => {
             long
         }
         const JSONdata = JSON.stringify(data)
-        const endpoint = 'http://api.where2meet.uk/meets/create'
+        const endpoint = 'https://api.where2meet.uk/meets/create'
         const options = {
             method: 'POST',
             headers: {
