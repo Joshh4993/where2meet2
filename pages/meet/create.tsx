@@ -16,18 +16,27 @@ const Register = () => {
     const [long, setLong] = useState('')
     const [description, setDescription] = useState('')
 
-    async function submit(e: SyntheticEvent) {
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
-        axios.post('http://api.where2meet.uk/meets/create', {
+        const data = {
             name,
             description,
             lat,
             long
-        }).then(async function (response) {
-            await Router.push(`/meet/${response.data._id}`)
-        })
-
+        }
+        const JSONdata = JSON.stringify(data)
+        const endpoint = 'http://api.where2meet.uk/meets/create'
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSONdata
+        }
+        const response = await fetch(endpoint, options)
+        const resdata = await response.json()
+        Router.push(`https://where2meet.uk/meet/${resdata._id}`)
     }
 
     const handleGoogleMapClick = (obj) => {
@@ -75,7 +84,7 @@ const Register = () => {
                 </div>
             )}
             {locSet && (
-                <form onSubmit={submit}>
+                <form onSubmit={handleSubmit}>
                     <h1 className="h3 mb-3 fw-normal">Create a Meet</h1>
                     <input type="text" className="form-control" placeholder="Meet Name" required
                         onChange={e => setName(e.target.value)}
