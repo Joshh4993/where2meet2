@@ -23,7 +23,7 @@ function MeetPage(props) {
               <div className={styles.gridMap}>
                 <MapContainer lat={props.meet.lat} long={props.meet.long} name={props.meet.name} />
               </div>
-              <a className={styles.gridDirectionsButton} href={`#`}>Get Directions</a>
+              <a className={styles.gridDirectionsButton} href={`https://www.google.com/maps/place/${props.meet.lat}+${props.meet.long}`}>Get Directions</a>
             </div>
           </>
         )}
