@@ -39,8 +39,7 @@ export async function getServerSideProps(context) {
   })
   let combinedURL = `https://api.where2meet.uk/meets/${id}`
   const res = await axios.get(combinedURL, { httpsAgent: agent })
-  console.log(res)
-  const meet = await res.json()
+  const meet = res.data
   return { props: { meet } }
 }
 
