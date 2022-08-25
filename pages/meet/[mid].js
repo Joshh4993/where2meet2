@@ -31,9 +31,11 @@ function MeetPage(props) {
 
 export async function getServerSideProps(context) {
   const { mid } = context.params
-  const res = await fetch(
-    `https://api.where2meet.uk/meets/${mid}`
-  );
+  const res = await fetch({
+    "rejectUnauthorized": false,
+    "url": `https://api.where2meet.uk/meets/${mid}`,
+    "method": "GET"
+  });
   const meet = await res.json()
   return { props: { meet } }
 }
