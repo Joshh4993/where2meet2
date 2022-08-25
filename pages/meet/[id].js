@@ -3,12 +3,13 @@ import { useEffect } from 'react'
 import Layout from '../../layouts/Layout'
 import styles from '../../styles/Meetup.module.css'
 import MapContainer from '../../components/MapContainer'
-import { useParams } from 'react-router-dom'
+import { useRouter } from 'next/router'
 
 export default function Home(props) {
   let meet
   useEffect(async () => {
-    const { id } = useParams()
+    const router = useRouter()
+    const { id } = router.query
     const res = await fetch(
       `https://api.where2meet.uk/meets/${id}`
     );
