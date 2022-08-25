@@ -6,16 +6,12 @@ import MapContainer from '../../components/MapContainer'
 import { useRouter } from 'next/router'
 
 export default async function Home(props) {
-  let meet
   const router = useRouter()
-  const { mid } = await router.query.then(() => {
-    useEffect(async () => {
-      const res = await fetch(
-        `https://api.where2meet.uk/meets/${mid}`
-      );
-      meet = await res.json()
-    }, [])
-  })
+  const { mid } = router.query
+  const res = await fetch(
+    `https://api.where2meet.uk/meets/${mid}`
+  );
+  const meet = await res.json()
 
   return (
     <Layout>
