@@ -8,11 +8,11 @@ import { useRouter } from 'next/router'
 export default function Home(props) {
   let meet
   const router = useRouter()
-  const { id } = router.query
+  const { mid } = router.query
 
   useEffect(async () => {
     const res = await fetch(
-      `https://api.where2meet.uk/meets/${id}`
+      `https://api.where2meet.uk/meets/${mid}`
     );
     meet = await res.json()
   }, [])
