@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout'
 import styles from '../../styles/Meetup.module.css'
 import MapContainer from '../../components/MapContainer'
 import { useRouter } from 'next/router'
+import { ConnectableObservable } from 'rxjs'
 const axios = require("axios")
 const https = require("https")
 
@@ -38,6 +39,7 @@ export async function getServerSideProps(context) {
   })
   let combinedURL = `https://api.where2meet.uk/meets/${id}`
   const res = await axios.get(combinedURL, { httpsAgent: agent })
+  console.log(res)
   const meet = await res.json()
   return { props: { meet } }
 }
