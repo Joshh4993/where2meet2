@@ -17,12 +17,12 @@ function MeetPage(props) {
               <h3 className={styles.gridTitle}>{props.meet.name}</h3>
               <h4 className={styles.gridLocLat}>Lat: {props.meet.lat}</h4>
               <h4 className={styles.gridLocLong}>Long: {props.meet.long}</h4>
-              <p className={styles.detailsLs}>{props.meet.description}</p>
             </div>
             <div className={styles.card}>
               <div className={styles.gridMap}>
                 <MapContainer lat={props.meet.lat} long={props.meet.long} name={props.meet.name} />
               </div>
+              <p className={styles.detailsLs}>{props.meet.description}</p>
               <a className={styles.gridDirectionsButton} href={`https://www.google.com/maps/place/${props.meet.lat}+${props.meet.long}`}>Get Directions</a>
             </div>
           </>
