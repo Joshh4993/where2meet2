@@ -5,7 +5,7 @@ import styles from '../../styles/Meetup.module.css'
 import MapContainer from '../../components/MapContainer'
 import { useRouter } from 'next/router'
 
-export default function Home(props) {
+export default async function Home(props) {
   let meet
   const router = useRouter()
   const { mid } = await router.query().then(() => {
