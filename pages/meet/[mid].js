@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { useEffect } from 'react'
 import Layout from '../../layouts/Layout'
 import styles from '../../styles/Meetup.module.css'
 import MapContainer from '../../components/MapContainer'
@@ -30,9 +29,8 @@ function MeetPage(props) {
   )
 }
 
-export async function getServerSideProps() {
-  const router = useRouter()
-  const { mid } = router.query
+export async function getServerSideProps(context) {
+  const { mid } = context.params
   const res = await fetch(
     `https://api.where2meet.uk/meets/${mid}`
   );
