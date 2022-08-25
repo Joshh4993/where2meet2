@@ -8,7 +8,7 @@ export default function Home(props) {
   let meet
   useEffect(() => {
     const res = await fetch(
-      `http://api.where2meet.uk/meets/${id}`
+      `https://api.where2meet.uk/meets/${id}`
     );
     meet = await res.json()
   }, [])
