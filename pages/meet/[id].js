@@ -11,7 +11,7 @@ export default function Home(props) {
       `http://api.where2meet.uk/meets/${id}`
     );
     meet = await res.json()
-  })
+  }, [])
 
 
   return (
