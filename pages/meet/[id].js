@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout'
 import styles from '../../styles/Meetup.module.css'
 import MapContainer from '../../components/MapContainer'
 import { useRouter } from 'next/router'
+const axios = require("axios")
 
 function MeetPage(props) {
   return (
@@ -32,11 +33,7 @@ function MeetPage(props) {
 export async function getServerSideProps(context) {
   const { id } = await context.params
   let combinedURL = `https://api.where2meet.uk/meets/${id}`
-  const res = await fetch({
-    "rejectUnauthorized": false,
-    "url": combinedURL,
-    "method": "GET"
-  });
+  const res = await axios.get(combinedURL)
   const meet = await res.json()
   return { props: { meet } }
 }
