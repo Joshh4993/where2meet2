@@ -30,8 +30,8 @@ function MeetPage(props) {
 }
 
 export async function getServerSideProps(context) {
-  const { mid } = await context.params
-  let combinedURL = `https://api.where2meet.uk/meets/${mid}`
+  const { id } = await context.params
+  let combinedURL = `https://api.where2meet.uk/meets/${id}`
   const res = await fetch({
     "rejectUnauthorized": false,
     "url": combinedURL,
