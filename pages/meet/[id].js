@@ -7,9 +7,10 @@ import { useRouter } from 'next/router'
 
 export default function Home(props) {
   let meet
+  const router = useRouter()
+  const { id } = router.query
+
   useEffect(async () => {
-    const router = useRouter()
-    const { id } = router.query
     const res = await fetch(
       `https://api.where2meet.uk/meets/${id}`
     );
