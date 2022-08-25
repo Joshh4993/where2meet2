@@ -6,7 +6,7 @@ import MapContainer from '../../components/MapContainer'
 
 export default function Home(props) {
   let meet
-  useEffect(() => {
+  useEffect(async () => {
     const res = await fetch(
       `https://api.where2meet.uk/meets/${id}`
     );
