@@ -74,6 +74,7 @@ const Terminal = () => {
                 break;
             case "discord":
                 let embedDescription = handleArgs
+                setOutputs([...outputs, `Message to Discord sent.`])
                 sendDiscordEmbed(embedDescription)
                 break;
             case "-h":
