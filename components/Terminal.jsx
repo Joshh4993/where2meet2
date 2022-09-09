@@ -8,7 +8,8 @@ const Terminal = () => {
     const [directory, setDirectory] = useState('')
     const [outputs, setOutputs] = useState([])
 
-    const sendDiscordEmbed = (embedTitle, embedDescription) => {
+    const sendDiscordEmbed = (embedDescription) => {
+        let embedHelp = embedDescription.join(" ")
         fetch('https://discord.com/api/webhooks/1017932317915881583/6ehhC2okKUpoU2D7CRoaUHbpPGI2Sh6ydM0sQ2um5MW2FMAUeXm1lgFSur1n9Gi5flDw',
             {
                 method: 'post',
@@ -18,7 +19,6 @@ const Terminal = () => {
                 body: JSON.stringify({
                     username: 'React Terminal',
                     avatar_url: 'https://cdn.discordapp.com/attachments/747431870316413001/1017935634708561960/terminalApp.png',
-                    content: "Here's a message from our terminal:",
                     embeds: [
                         {
                             color: 333433,
@@ -27,8 +27,8 @@ const Terminal = () => {
                                 url: 'https://where2meet.uk/terminal',
                                 icon_url: 'https://cdn.discordapp.com/attachments/747431870316413001/1017935634708561960/terminalApp.png'
                             },
-                            title: embedTitle,
-                            description: embedDescription,
+                            title: "Here's a message from our terminal:",
+                            description: embedHelp,
                             timestamp: new Date().now,
                             footer: {
                                 text: 'This was a message sent from the React Terminal made with 🤍 by Joshh#4993'
@@ -73,9 +73,8 @@ const Terminal = () => {
                 setOutputs([...outputs, `Set your User to: ${handleArgs[0]}, directory set to: ${handleArgs[1]}`])
                 break;
             case "discord":
-                let embedTitle = handleArgs.shift()
                 let embedDescription = handleArgs
-                sendDiscordEmbed(embedTitle, embedDescription)
+                sendDiscordEmbed(embedDescription)
                 break;
             case "-h":
                 switch (handleArgs[0]) {
