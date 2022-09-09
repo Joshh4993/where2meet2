@@ -67,6 +67,11 @@ const Terminal = () => {
             case "help":
                 setOutputs([...outputs, `Help | clear: -h clear | ping: -h ping | asl: -h asl`])
                 break;
+            case "user":
+                localStorage.setItem('user', handleArgs[0])
+                localStorage.setItem('directory', handleArgs[1])
+                setOutputs([...outputs, `Set your User to: ${handleArgs[0]}, directory set to: ${handleArgs[1]}`])
+                break;
             case "discord":
                 let embedTitle = handleArgs.shift()
                 let embedDescription = handleArgs
