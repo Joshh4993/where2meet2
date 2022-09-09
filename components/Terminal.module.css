@@ -1,0 +1,94 @@
+.terminal_container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: none;
+    overflow: hidden;
+}
+
+.terminal_window {
+    position: flex;
+    flex-direction: column;
+    width: 98vw;
+    height: 95vh;
+    background-color: black;
+    margin: auto;
+    -webkit-transform: translate(0, 2%);
+    transform: translate(0 , 2%);
+}
+
+.terminal_response {
+    margin: auto;
+    width: 100%;
+    height: 94%;
+    background-color: black;
+    position: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.terminal_response > div {
+    color: white;
+    margin-left: 2vw;
+    position: flex;
+    flex-direction: row;
+    height: auto;
+    width: 95%;
+    overflow: hidden;
+}
+
+.terminal_commandwindow {
+    background-color: none;
+    margin: auto;
+    width: 98%;
+    height: 5%;
+    border-left: solid 1px white;
+    position: flex;
+    flex-direction: row;
+}
+
+.terminal_commandwindow > div {
+    padding: 1rem;
+    position: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+.terminal_commandwindow >div >form {
+    display: inherit;
+}
+
+.terminal_commandwindow > div > form > input {
+    width: 80vw;
+    color: white;
+    border: 1px solid white;
+    background-color: black;
+}
+
+@media only screen and (max-width: 751px) {
+    .terminal_commandwindow >div >form >input {
+            width: 60vw;
+    }
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.warn {
+    color: orange;
+}
+
+.info {
+    color: lightskyblue;
+}
