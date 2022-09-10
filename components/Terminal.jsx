@@ -29,7 +29,7 @@ const Terminal = () => {
                             },
                             title: "Here's a message from our terminal:",
                             description: embedHelp,
-                            timestamp: new Date.now(),
+                            timestamp: new Date(),
                             footer: {
                                 text: 'This was a message sent from the React Terminal made with 🤍 by Joshh#4993'
                             }
