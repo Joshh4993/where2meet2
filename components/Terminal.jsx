@@ -11,13 +11,16 @@ const Terminal = () => {
     //Google chat webhook
     const sendGoogleMessage = (googleMessage) => {
         let messageMessage = googleMessage.join(" ")
+        let messageMessageObj = {
+            text: messageMessage
+        }
         let response = fetch('https://chat.googleapis.com/v1/spaces/AAAAIY4iLpA/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=vc_cz2NS5XxsyC0czkg_L6P3htg3cHV21ewSdoOiQZw%3D',
             {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(messageMessage)
+                body: messageMessageObj
             }
         )
         if (response) setOutputs([...outputs, response.toString()])
