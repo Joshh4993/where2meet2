@@ -20,7 +20,7 @@ const Terminal = () => {
                 body: JSON.stringify(messageMessage)
             }
         )
-        if (response) setOutputs([...outputs, response])
+        if (response) setOutputs([...outputs, response.toString()])
     }
 
     const sendDiscordEmbed = (embedDescription) => {
