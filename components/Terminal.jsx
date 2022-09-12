@@ -94,9 +94,9 @@ const Terminal = () => {
                 sendDiscordEmbed(embedDescription)
                 break;
             case "googlechat":
-            let googleMessage = handleArgs
-            setOutputs([...outputs, `Message to Google sent.`])
-            sendDiscordEmbed(googleMessage)
+                let googleMessage = handleArgs
+                setOutputs([...outputs, `Message to Google sent.`])
+                sendGoogleMessage(googleMessage)
                 break;
             case "-h":
                 switch (handleArgs[0]) {
