@@ -23,7 +23,7 @@ const Terminal = () => {
                 body: JSON.stringify(messageMessageObj)
             }
         )
-        if (response) setOutputs([...outputs, response.toString()])
+        if (response) setOutputs([...outputs, response])
     }
 
     const sendDiscordEmbed = (embedDescription) => {
@@ -84,6 +84,18 @@ const Terminal = () => {
                 break;
             case "help":
                 setOutputs([...outputs, `Help | clear: -h clear | ping: -h ping | asl: -h asl`])
+                break;
+            case "rolldice":
+                setOutputs([...outputs, "This is python"])
+                let number1 = Math.random(1,6)
+                let number2 = Math.random(1,6)
+                if(number1 != number2) {
+                    setOutputs([...outputs, `The numbers are not the same: ${number1}, ${number2}`])
+                } else {
+                    let string = `The numbers are the same: ${number1}, ${number2}`
+                    sendGoogleMessage(string)
+                    setOutputs([...outputs, `The numbers are the same: ${number1}, ${number2}`])
+                }
                 break;
             case "user":
                 localStorage.setItem('user', handleArgs[0])
