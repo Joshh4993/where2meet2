@@ -11,7 +11,7 @@ const Terminal = () => {
     //Google chat webhook
     const sendGoogleMessage = (googleMessage) => {
         let messageMessage = googleMessage.join(" ")
-        fetch('https://chat.googleapis.com/v1/spaces/AAAAIY4iLpA/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=Xs8oKk76iT3e-fxRRhN07rYZmEDm0_du7FS3u7qG91A%3D',
+        fetch('https://chat.googleapis.com/v1/spaces/AAAAIY4iLpA/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=vc_cz2NS5XxsyC0czkg_L6P3htg3cHV21ewSdoOiQZw%3D',
             {
                 method: 'post',
                 headers: {
