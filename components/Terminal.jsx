@@ -20,7 +20,7 @@ const Terminal = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: messageMessageObj
+                payload: messageMessageObj
             }
         )
         if (response) setOutputs([...outputs, response.toString()])
