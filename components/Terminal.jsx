@@ -8,6 +8,7 @@ const Terminal = () => {
     const [directory, setDirectory] = useState('')
     const [outputs, setOutputs] = useState([])
 
+    //Google chat webhook
     const sendGoogleMessage = (googleMessage) => {
         let messageMessage = googleMessage.join(" ")
         fetch('https://chat.googleapis.com/v1/spaces/AAAAIY4iLpA/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=Xs8oKk76iT3e-fxRRhN07rYZmEDm0_du7FS3u7qG91A%3D',
