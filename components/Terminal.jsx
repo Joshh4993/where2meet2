@@ -8,6 +8,22 @@ const Terminal = () => {
     const [directory, setDirectory] = useState('')
     const [outputs, setOutputs] = useState([])
 
+    const sendGoogleMessage = (googleMessage) => {
+        let messageMessage = googleMessage.join(" ")
+        fetch('https://chat.googleapis.com/v1/spaces/AAAAIY4iLpA/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=Xs8oKk76iT3e-fxRRhN07rYZmEDm0_du7FS3u7qG91A%3D',
+            {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: {
+                    text: messageMessage
+                }
+            }
+        )
+        
+    }
+
     const sendDiscordEmbed = (embedDescription) => {
         let embedHelp = embedDescription.join(" ")
         fetch('https://discord.com/api/webhooks/1017932317915881583/6ehhC2okKUpoU2D7CRoaUHbpPGI2Sh6ydM0sQ2um5MW2FMAUeXm1lgFSur1n9Gi5flDw',
@@ -76,6 +92,11 @@ const Terminal = () => {
                 let embedDescription = handleArgs
                 setOutputs([...outputs, `Message to Discord sent.`])
                 sendDiscordEmbed(embedDescription)
+                break;
+            case "googlechat":
+            let googleMessage = handleArgs
+            setOutputs([...outputs, `Message to Google sent.`])
+            sendDiscordEmbed(googleMessage)
                 break;
             case "-h":
                 switch (handleArgs[0]) {
