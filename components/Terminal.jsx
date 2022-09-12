@@ -23,7 +23,7 @@ const Terminal = () => {
                 body: JSON.stringify(messageMessageObj)
             }
         )
-        if (response) setOutputs([...outputs, "Google Chat message sent"])
+        setOutputs([...outputs, "Google Chat message sent"])
     }
 
     const sendDiscordEmbed = (embedDescription) => {
